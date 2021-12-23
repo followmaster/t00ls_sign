@@ -8,13 +8,13 @@ import os
 
 uname = os.environ['T00LS_USERNAME'] # 用户名
 pswd = os.environ['T00LS_PASSWORD']  # 明文密码或密码MD5
-password_hash = ("T00LS_MD5" in os.environ) and os.environ['T00LS_MD5']=='False' or False  # 密码为md5时设置为True
+#password_hash = ("T00LS_MD5" in os.environ) and os.environ['T00LS_MD5']=='False' or False  # 密码为md5时设置为True
 qesnum = ("T00LS_QID" in os.environ) and os.environ['T00LS_QID'] or '' # 安全提问 参考下面
 qan = ("T00LS_QANS" in os.environ) and os.environ['T00LS_QANS'] or '' #安全提问答案
 SCKEY = ("T00LS_SCKEY" in os.environ) and os.environ['T00LS_SCKEY'] or '' #Server酱申请的skey
 
-if not password_hash:
-    pswd = hashlib.md5(pswd.encode('utf-8')).hexdigest()
+#if not password_hash:
+pswd = hashlib.md5(pswd.encode('utf-8')).hexdigest()
 
 # 0 = 没有安全提问
 # 1 = 母亲的名字
