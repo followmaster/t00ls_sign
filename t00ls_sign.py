@@ -33,7 +33,13 @@ logindata = {
   'answer': qan
 }
 
-rlogin = requests.post('https://www.t00ls.com/login.json', data = logindata)
+# 定义 headers 模拟浏览器
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'application/json, text/javascript, */*; q=0.01',
+    'Referer': 'https://t00ls.com'
+}
+rlogin = requests.post('https://www.t00ls.com/login.json', data = logindata，headers=headers)
 rlogj = json.loads(rlogin.text)
 if (rlogj["status"] != "success"):
   print("登入失败，请检查输入资料是否正确！")
