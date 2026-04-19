@@ -18,7 +18,7 @@ jobs:
       with:
         python-version: '3.x'
     - name: 'Install dependencies'
-      run: python -m pip install --upgrade requests
+      run: pip install cloudscraper requests
     - name: 'T00ls Sign'
       env:
         T00LS_USERNAME: ${{ secrets.T00LS_USERNAME }}
