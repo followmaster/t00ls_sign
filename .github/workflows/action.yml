@@ -1,11 +1,14 @@
 name: 'T00ls Sign'
 
 on:
+  workflow_dispatch: # 添加此行以启用手动触发
   push:
-    branches: 
-      - master
-  schedule:
-    - cron: '0 17 * * *'
+    branches: [ main ]
+  #push:
+  #  branches: 
+  #    - master
+  #schedule:
+  #  - cron: '0 17 * * *'
 
 jobs:
   t00ls_sign:
