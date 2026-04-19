@@ -39,7 +39,7 @@ headers = {
     'Accept': 'application/json, text/javascript, */*; q=0.01',
     'Referer': 'https://t00ls.com'
 }
-rlogin = requests.post('https://www.t00ls.com/login.json', data = logindata，headers=headers)
+rlogin = requests.post('https://www.t00ls.com/login.json', data = logindata,headers=headers)
 rlogj = json.loads(rlogin.text)
 if (rlogj["status"] != "success"):
   print("登入失败，请检查输入资料是否正确！")
